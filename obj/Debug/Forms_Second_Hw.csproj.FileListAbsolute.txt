@@ -1,0 +1,10 @@
+E:\c# 2semestr\Forms_Second_Hw\obj\Debug\Forms_Second_Hw.csprojAssemblyReference.cache
+E:\c# 2semestr\Forms_Second_Hw\obj\Debug\Forms_Second_Hw.Form1.resources
+E:\c# 2semestr\Forms_Second_Hw\obj\Debug\Forms_Second_Hw.Properties.Resources.resources
+E:\c# 2semestr\Forms_Second_Hw\obj\Debug\Forms_Second_Hw.csproj.GenerateResource.cache
+E:\c# 2semestr\Forms_Second_Hw\obj\Debug\Forms_Second_Hw.csproj.CoreCompileInputs.cache
+E:\c# 2semestr\Forms_Second_Hw\bin\Debug\Forms_Second_Hw.exe.config
+E:\c# 2semestr\Forms_Second_Hw\bin\Debug\Forms_Second_Hw.exe
+E:\c# 2semestr\Forms_Second_Hw\bin\Debug\Forms_Second_Hw.pdb
+E:\c# 2semestr\Forms_Second_Hw\obj\Debug\Forms_Second_Hw.exe
+E:\c# 2semestr\Forms_Second_Hw\obj\Debug\Forms_Second_Hw.pdb
