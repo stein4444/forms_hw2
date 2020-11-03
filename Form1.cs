@@ -14,27 +14,34 @@ namespace Forms_Second_Hw
     {
         private int heigh = 1024;
         private int width = 768;
-        private int size { get; set; }
-        int score = 0;
-        int stepMin = 2;
-        int stepMax = 5;
-        int x, y;
+        int size;
+        int score;
         Point gontel;
+
+        Random rand = new Random();
         public Form1()
         {
             InitializeComponent();
-            size = 60;
             this.Text = "Kochalochka";
             this.Width = width;
             this.Height = heigh;
-            this.LbScore.Text += score.ToString();
-            
+            GameInit();
         }
+
+
+        private void GameInit()
+        {
+            size = 60;
+            score = 0;          
+            LbScore.Text = "Score: " + score;
+            GenerateGantel();
+            timer.Start();
+        }
+
         private void GenerateGantel()
         {
-            this.PiGontel.Size = new Size(size,size);
-            this.PiGontel.Visible = true;
-            Random rand = new Random();
+            PiGontel.Size = new Size(size, size);
+            PiGontel.Visible = true;
             gontel.X = rand.Next(0, heigh - size);
             int tempX = gontel.X % size;
             gontel.X -= tempX;
@@ -43,17 +50,10 @@ namespace Forms_Second_Hw
             gontel.Y -= tempY;
             gontel.X++;
             gontel.Y++;
-            this.PiGontel.Location = new Point(gontel.X, gontel.Y);
-            this.Controls.Add(PiGontel);
+            PiGontel.Location = new Point(gontel.X, gontel.Y);
+            Controls.Add(PiGontel);
         }
-        private void Form1_Paint(object sender, PaintEventArgs e)
-        {
-            if (PiKochka.Location.X == gontel.X && PiKochka.Location.Y == gontel.Y)
-            {
-                GenerateGantel();
-                this.score += 50;
-            }
-        }
+  
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyData)
@@ -62,13 +62,13 @@ namespace Forms_Second_Hw
                     PiKochka.Location = new Point(PiKochka.Location.X - size, PiKochka.Location.Y);
                     break;
                 case Keys.Up:
-                    PiKochka.Location = new Point(PiKochka.Location.X , PiKochka.Location.Y- size);
+                    PiKochka.Location = new Point(PiKochka.Location.X, PiKochka.Location.Y - size);
                     break;
                 case Keys.Right:
                     PiKochka.Location = new Point(PiKochka.Location.X + size, PiKochka.Location.Y);
                     break;
                 case Keys.Down:
-                    PiKochka.Location = new Point(PiKochka.Location.X, PiKochka.Location.Y+size);      
+                    PiKochka.Location = new Point(PiKochka.Location.X, PiKochka.Location.Y + size);
                     break;
                 case Keys.Oemplus:
                     size += 10;
@@ -82,17 +82,31 @@ namespace Forms_Second_Hw
                     break;
             }
             this.Refresh();
+
         }
 
+        private bool Collision(int x, int y)
+        {
+            return x == PiGontel.Location.X && y == PiGontel.Location.Y;
+        }
         private void timer_Tick(object sender, EventArgs e)
         {
-           
-        }
-
-        private void GameOver()
-        {
-            if(score >= 400)
+            this.LbScore.Text = "Score: " + score;
+                
+            if (Collision(PiKochka.Location.X  , PiKochka.Location.Y ))
             {
+                score += 50;
+                GenerateGantel();
+            }
+            if (score >= 400)
+            {
+                GameOver();
+            }
+        }
+        private void GameOver()
+        {           
+                timer.Stop();
+            this.HappyKochka.Visible = true;
                 DialogResult window = MessageBox.Show($"Congratulation - You Win\nYou want play again?" + MessageBoxButtons.YesNo);
                 switch (window)
                 {
@@ -103,7 +117,7 @@ namespace Forms_Second_Hw
                         this.Close();
                         break;
                 }
-            }
+            
         }
     }
 }

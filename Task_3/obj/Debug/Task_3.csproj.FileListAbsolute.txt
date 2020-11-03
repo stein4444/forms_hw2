@@ -1,0 +1,10 @@
+E:\c# 2semestr\Forms_Second_Hw\Task_3\bin\Debug\Task_3.exe.config
+E:\c# 2semestr\Forms_Second_Hw\Task_3\bin\Debug\Task_3.exe
+E:\c# 2semestr\Forms_Second_Hw\Task_3\bin\Debug\Task_3.pdb
+E:\c# 2semestr\Forms_Second_Hw\Task_3\obj\Debug\Task_3.csprojAssemblyReference.cache
+E:\c# 2semestr\Forms_Second_Hw\Task_3\obj\Debug\Task_3.Form1.resources
+E:\c# 2semestr\Forms_Second_Hw\Task_3\obj\Debug\Task_3.Properties.Resources.resources
+E:\c# 2semestr\Forms_Second_Hw\Task_3\obj\Debug\Task_3.csproj.GenerateResource.cache
+E:\c# 2semestr\Forms_Second_Hw\Task_3\obj\Debug\Task_3.csproj.CoreCompileInputs.cache
+E:\c# 2semestr\Forms_Second_Hw\Task_3\obj\Debug\Task_3.exe
+E:\c# 2semestr\Forms_Second_Hw\Task_3\obj\Debug\Task_3.pdb
